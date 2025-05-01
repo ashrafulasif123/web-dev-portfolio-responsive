@@ -68,7 +68,9 @@
     background-repeat: no-repeat;
     background-position: left center, bottom right;
     height: 837px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
 }
 
 nav{
@@ -76,8 +78,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     margin: 0 226px;
-    padding-top: 51px;
-    overflow: hidden;
+    padding-top: 30px;
 }
 
 .nav-title{
@@ -86,7 +87,6 @@ nav{
 }
 
 nav ul{
-    /* list-style-type: none; */
     display: flex;
     align-items: center;
 }
@@ -102,14 +102,15 @@ nav li a{
 }
 
 .banner{
-    margin: 185px 38px 0 230px;
+    flex-grow: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    padding: 0 20px;
 }
 
 .banner-content{
-    /* width: 100%; */
+    width: 100%;
     max-width: 585px;
 }
 
@@ -130,10 +131,12 @@ nav li a{
 }
 
 .banner-profile-pic{
-    width: 584px;
-    position: absolute;
-    right: 20px;
-    bottom: 0;
+   align-self: flex-end;
+}
+
+.banner-profile-pic img{
+    vertical-align: bottom;
+    max-width: 100%;
 }
 
 .banner button{
@@ -319,6 +322,35 @@ main{
 /* media query */
 
 @media screen and (max-width: 576px) {
+    .header{
+        height: auto;
+    }
+
+    nav{
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: baseline;
+        margin: 0px 25px;
+        padding-top: 30px;
+        gap: 20px;
+    }
+
+    nav ul{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .banner{
+        flex-direction: column;
+        gap: 50px;
+        margin-top: 25px;
+    }
+
+    .btn-primary{
+        font-size: 16px;
+        padding: 9px 18px;
+    }
+
     .skills-container, .resume-items{
         flex-direction: column;
     }
